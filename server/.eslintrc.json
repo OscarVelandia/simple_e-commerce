@@ -4,16 +4,25 @@
     "es6": true,
     "node": true
   },
-  "extends": ["airbnb-base", "prettier"],
-  "plugins": ["prettier"],
+  "extends": [
+    "airbnb-base",
+    "prettier",
+    "plugin:node/recommended",
+    "plugin:import/errors"
+  ],
+  "plugins": ["prettier", "import"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaVersion": 2019
   },
   "rules": {
+    "node/no-missing-require": "error",
+    "node/no-exports-assign": "error",
+    "node/no-deprecated-api": "error",
+    "node/exports-style": ["error", "module.exports"],
     "prettier/prettier": "error"
   }
 }

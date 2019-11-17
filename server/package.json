@@ -3,22 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./source/app.js"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "~4.16.1",
+    "mongoose": "^5.7.11",
     "morgan": "~1.9.1"
   },
   "devDependencies": {
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.3",
+    "nodemon": "^1.19.4",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1"
   },
