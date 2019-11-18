@@ -23,6 +23,8 @@
     "node/no-exports-assign": "error",
     "node/no-deprecated-api": "error",
     "node/exports-style": ["error", "module.exports"],
-    "prettier/prettier": "error"
+    "no-param-reassign": 0,
+    "no-return-assign": 0,
+    "prettier/prettier": "warn"
   }
 }
