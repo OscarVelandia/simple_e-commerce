@@ -16,11 +16,11 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
-app.use("/product", productRouter);
+app.use("/products", productRouter);
 
 const start = async () => {
   try {
-    await connect;
+    await connect();
     app.listen(app.get("port"), () => {
       // eslint-disable-next-line no-console
       console.log(`REST API en http://localhost:${app.get("port")}`);
