@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 
-const connect = async () => {
-  const URL =
-    process.env.MONGODB_URI ||
-    "mongodb://localhost:27017/products_availability";
+module.exports.connect = async () => {
+  const URI = process.env.MONGODB_URI
+    ? process.env.MONGODB_URI
+    : `mongodb+srv://admin:${process.env.MONGO_ATLAS_PWD}@garbarinoproducts-dtjh1.mongodb.net/test?retryWrites=true&w=majority`;
 
-  mongoose.connect(URL, {
+  mongoose.createConnection(URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });
-};
 
-module.exports = connect;
+  console.log("Database is connected");
+};

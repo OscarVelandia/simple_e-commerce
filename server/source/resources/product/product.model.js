@@ -1,25 +1,19 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-const productAvailabilitySchema = new mongoose.Schema(
+const productAvailabilitySchema = new Schema(
   {
     id: {
       type: String,
       required: true,
       trim: true,
-      maxlength: 50
+      unique: true
     },
     enabled: {
       type: Boolean,
-      required: true,
-      trim: true
+      required: true
     }
   },
   { timestamps: true }
 );
 
-const ProductAvailability = mongoose.model(
-  "productAvailability",
-  productAvailabilitySchema
-);
-
-module.exports = ProductAvailability;
+module.exports = model("ProductAvailability", productAvailabilitySchema);
