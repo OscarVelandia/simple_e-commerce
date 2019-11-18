@@ -1,14 +1,23 @@
-const mongoose = require("mongoose");
+const { connect, connection } = require("mongoose");
 
-module.exports.connect = async () => {
-  const URI = process.env.MONGODB_URI
-    ? process.env.MONGODB_URI
-    : `mongodb+srv://admin:${process.env.MONGO_ATLAS_PWD}@garbarinoproducts-dtjh1.mongodb.net/test?retryWrites=true&w=majority`;
+const mongoConnection = async () => {
+  const URI = process.env.MONGO_PORT
+    ? process.env.MONGO_PORT
+    : ` mongodb://localhost/productAvailability`;
 
-  mongoose.createConnection(URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
+  try {
+    connect(URI, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useUnifiedTopology: true
+    });
 
-  console.log("Database is connected");
+    return connection.once("open", () => {
+      console.log(`Se conecto correctamente? ${!!connection.readyState}`);
+    });
+  } catch (err) {
+    return new Error(err);
+  }
 };
+
+module.exports = mongoConnection;

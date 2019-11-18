@@ -1,5 +1,6 @@
 {
   "env": {
-    "MONGO_ATLAS_PWD": "admin"
+    "MONGO_PORT": "mongodb://localhost/productAvailability",
+    "APP_PORT": 3001
   }
 }
