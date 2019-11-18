@@ -1,5 +1,0 @@
-GET http://garbarino-mock-api.s3-website-us-east-1.amazonaws.com/products
-
-###
-
-GET http://localhost:3001/products

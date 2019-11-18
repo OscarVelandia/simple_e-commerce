@@ -2,6 +2,7 @@ const express = require("express");
 const { json, urlencoded } = require("body-parser");
 const morgan = require("morgan");
 const cors = require("cors");
+
 const productRouter = require("./resources/product/product.router");
 
 const app = express();

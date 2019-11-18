@@ -7,6 +7,9 @@ const router = Router();
 router.route("/").get(controllers.getAllProducts);
 
 // /product/:id
-router.route("/:id").get(controllers.getOneProduct);
+router
+  .route("/:id")
+  .get(controllers.getOneProduct)
+  .patch(controllers.setProductAvailability);
 
 module.exports = router;
