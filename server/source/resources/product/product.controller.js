@@ -54,7 +54,7 @@ module.exports = {
         return { ...product, enabled: true };
       });
 
-      res.status(200).json({ data: products });
+      res.status(200).json(products);
     } catch (err) {
       req.error = err;
       res.status(400).end();
@@ -84,7 +84,7 @@ module.exports = {
           .end();
       }
 
-      return res.status(200).json({ data: products });
+      return res.status(200).json(products);
     } catch (err) {
       req.error = err;
 
