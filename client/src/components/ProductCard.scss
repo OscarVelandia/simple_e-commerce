@@ -1,0 +1,17 @@
+.product-card {
+  img {
+    margin: 0;
+  }
+
+  .discount {
+    color: #3c7b00;
+  }
+
+  .final-price {
+    color: #d1030f !important;
+  }
+
+  .list-price {
+    text-decoration: line-through;
+  }
+}
