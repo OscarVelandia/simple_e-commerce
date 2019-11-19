@@ -39,7 +39,7 @@
     },
     "import/resolver": {
       "node": {
-        "paths": ["src", "node_modules"],
+        "paths": ["src"],
         "extensions": [".js", ".jsx", ".ts", ".scss", ".css"]
       }
     }
