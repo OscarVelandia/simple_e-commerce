@@ -1,0 +1,63 @@
+### Get data de garbarino
+GET http://garbarino-mock-api.s3-website-us-east-1.amazonaws.com/products
+
+### Get productos generales
+GET http://localhost:3001/products
+
+### Get 1 producto
+GET http://localhost:3001/products/0982a08485
+
+### Get 1 producto
+GET http://localhost:3001/products/3d77bc3a98
+
+### Patch para habilitar 1 producto
+PATCH http://localhost:3001/products/0982a08485 HTTP/1.1
+Content-Type: application/json
+
+{
+    "enabled": true
+}
+
+
+### Patch para deshabilitar 1 producto
+PATCH http://localhost:3001/products/0982a08485 HTTP/1.1
+Content-Type: application/json
+
+{
+    "enabled": false
+}
+
+### Patch para habilitar 1 producto
+PATCH http://localhost:3001/products/3d77bc3a98 HTTP/1.1
+Content-Type: application/json
+
+{
+    "enabled": true
+}
+
+
+### Patch para deshabilitar 1 producto
+PATCH http://localhost:3001/products/3d77bc3a98 HTTP/1.1
+Content-Type: application/json
+
+{
+    "enabled": false
+}
+
+
+### Patch para habilitar 1 producto
+PATCH http://localhost:3001/products/fac1a6c3d1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "enabled": true
+}
+
+### Patch para deshabilitar 1 producto
+PATCH http://localhost:3001/products/fac1a6c3d1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "enabled": false
+}
+

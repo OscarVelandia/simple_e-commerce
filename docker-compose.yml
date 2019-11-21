@@ -1,0 +1,47 @@
+version: "3.7"
+
+networks:
+  default:
+    name: "product-list"
+
+services:
+  frontend:
+    container_name: react
+    build:
+      context: ./client
+      dockerfile: docker/Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client:/usr/src/app
+    environment:
+      PRODUCT_URL: http://localhost:EXPRESS_PORT/products
+
+  database:
+    image: mongo
+    restart: unless-stopped
+    volumes:
+      - /DBData:/data/db
+      - /.server/logs/mongo:/etc/mongo/
+    command: --config /etc/mongo/mongod.conf
+    ports:
+      - 27017:27017
+
+  mongo-administrator:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+
+  server:
+    container_name: express_server
+    restart: always
+    volumes:
+      - ./server:/usr/src/app
+    environment:
+      APP_PORT: 3001
+    build:
+      context: ./server
+      dockerfile: docker/Dockerfile
+    ports:
+      - 3001:3001
