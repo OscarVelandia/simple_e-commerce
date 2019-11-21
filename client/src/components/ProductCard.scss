@@ -1,17 +1,18 @@
-.product-card {
+.product {
   img {
     margin: 0;
   }
 
-  .discount {
-    color: #3c7b00;
+  .list-price {
+    text-decoration: line-through;
+    margin-right: 2%;
+    color: #9e9ea1;
   }
 
   .final-price {
     color: #d1030f !important;
   }
-
-  .list-price {
-    text-decoration: line-through;
+  .discount {
+    color: #3c7b00;
   }
 }

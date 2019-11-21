@@ -1,15 +1,22 @@
 header {
   background-color: #ce0202;
-  height: 3rem;
+  height: 5rem;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding: 10px 20px;
+
+  .return-icon {
+    padding: 10px 20px;
+    color: white;
+  }
 
   a {
     margin-left: 2rem;
   }
 
   img {
-    width: 158px;
-    height: 34px;
+    width: 232px;
+    height: 50px;
   }
 }
