@@ -2,9 +2,10 @@
 App Fullstack realizada con React, Nodejs y mongodb, 
 
 ## Como correr cada proyecto
-1. Iniciar el servidor de mongo con ```sudo systemctl start mongod```,
-2. Ingresar a las carpetas **client** y **server**, 
-3. En cada carpeta ejecutar ```npm i``` y ```npm run start```.
+1. Instalar ```NodeJs v12.13.1```, con nvm se instalaria con ```nvm install --lts=erbium```,  
+2. Iniciar el servidor de mongo con ```sudo systemctl start mongod```,
+3. Ingresar a las carpetas **client** y **server**, 
+4. En cada carpeta ejecutar ```npm i``` y ```npm run start```.
 
 ## Temas que tuve en cuenta
 ### Server
