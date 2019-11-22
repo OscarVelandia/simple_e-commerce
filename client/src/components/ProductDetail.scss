@@ -1,14 +1,23 @@
-.header {
-  padding: 1.5rem 0 0 1.5rem !important;
-  margin-bottom: 0 !important;
-}
-
-.border-right-box {
+.detail {
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
 
-.product {
+.product-picture {
+  height: 80vh;
+
+  .header {
+    padding: 0.5rem 0 0 1.5rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .image {
+    margin-top: 1rem;
+    max-height: 90%;
+  }
+}
+
+.product-price {
   .final-price {
     color: #d1030f !important;
     font-size: 35px;
@@ -25,44 +34,43 @@
     color: #3c7b00;
     font-size: 1.2rem;
   }
-}
-
-.payment-information {
-  border: 1px solid #dfdfdf;
-  padding: 15px;
-  text-align: left;
-  margin: 15px 0 0 0;
-
-  legend {
-    font-weight: 600;
-  }
-  a {
-    display: block;
-    color: #0084e0;
+  .payment-information {
+    border: 1px solid #dfdfdf;
+    padding: 15px;
     text-align: left;
-    font-size: 14px;
-    line-height: 35px;
-  }
+    margin: 15px 0 0 0;
 
-  .promo-title {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 35px;
-    margin-top: 15px;
-    text-align: left;
-  }
-  .paymenth-methods {
-    height: 35px;
-    width: auto;
-  }
+    legend {
+      font-weight: 600;
+    }
+    a {
+      display: block;
+      color: #0084e0;
+      text-align: left;
+      font-size: 14px;
+      line-height: 35px;
+    }
 
-  .benefits {
-    color: #0f7300;
-  }
+    .promo-title {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 35px;
+      margin-top: 15px;
+      text-align: left;
+    }
+    .paymenth-methods {
+      height: 35px;
+      width: auto;
+    }
 
-  .promo-list li {
-    list-style: disc;
-    text-align: left;
-    margin-left: 1rem;
+    .benefits {
+      color: #0f7300;
+    }
+
+    .promo-list li {
+      list-style: disc;
+      text-align: left;
+      margin-left: 1rem;
+    }
   }
 }

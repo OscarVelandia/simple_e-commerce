@@ -1,8 +1,7 @@
-/* eslint-disable camelcase */
 import React, { useState, useEffect } from "react";
 import { Grid } from "semantic-ui-react";
 import { Link } from "@reach/router";
-import formatCurrency from "../utils/formatCurrency";
+import { formatCurrency } from "../utils/auxiliarMethods";
 import productRequests from "../services/products";
 
 import Loader from "./GeneralLoader";

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { redirectTo } from "@reach/router";
 
 const request = async (url, parameter = "") => {
   try {
@@ -6,8 +7,7 @@ const request = async (url, parameter = "") => {
 
     return result.data;
   } catch (err) {
-    // eslint-disable-next-line no-console
-    return console.error("Blablaerror: ", err);
+    return redirectTo("/error");
   }
 };
 
