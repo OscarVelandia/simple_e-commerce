@@ -10,7 +10,7 @@ App Fullstack realizada con React, Nodejs y mongodb,
 ## Temas que tuve en cuenta
 ### Server
 * La estructura del proyecto la hice teniendo en cuenta [esto](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/projectstructre/breakintcomponents.md) y [esto](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/projectstructre/breakintcomponents.md)
-* Usé **Nodemon** para que el proyecto se recargue ante cada cambio
+* Usé **Nodemon** para que el proyecto se recargue ante cada cambio y nodemon.json para guardar las variables de entorno.
 * Usé la extensión de vscode [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) por sobre *Insomnia* o *Postman* por su integración con VSCode y facilidad de uso. El archivo para realizar las llamadas está en ```source/resources/product/products.rest ```
 
 ### Client
