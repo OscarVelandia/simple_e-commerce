@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Grid } from "semantic-ui-react";
-import { Link } from "@reach/router";
+import { Link, Redirect } from "@reach/router";
 import { formatCurrency } from "../utils/auxiliarMethods";
 import productRequests from "../services/products";
 
@@ -10,16 +10,24 @@ import "./ProductCard.scss";
 function ProductCard() {
   const loaderMessage = "Cargando los productos.";
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     const getProducts = async () => {
-      const enabledProducts = await productRequests
-        .allProducts()
-        .then(fetchedProducts =>
-          fetchedProducts.filter(product => product.enabled)
-        );
+      try {
+        const enabledProducts = await productRequests
+          .allProducts()
+          .then(fetchedProducts =>
+            fetchedProducts.filter(product => product.enabled)
+          );
 
-      setProducts(enabledProducts);
+        setProducts(enabledProducts);
+        return setIsLoading(false);
+      } catch (err) {
+        setIsError(true);
+        return setIsLoading(false);
+      }
     };
 
     getProducts();
@@ -28,9 +36,9 @@ function ProductCard() {
 
   return (
     <>
-      {!products.length ? (
-        <Loader message={loaderMessage} />
-      ) : (
+      {isLoading && <Loader message={loaderMessage} />}
+      {isError && <Redirect to="/error" noThrow />}
+      {!isError && !isLoading && (
         <Grid columns={4} padded>
           {products.map(product => (
             <Grid.Column key={product.id}>
