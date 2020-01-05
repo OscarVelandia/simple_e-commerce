@@ -33,9 +33,3 @@ App Fullstack realizada con React, Nodejs y mongodb,
 ### Server
 * Tener un mejor manejo de errores
 * Haber usado TypeScript para mejorar la fiabilidad del código
-
-### Client
-* Por un error extraño en los import, Semantic UI está siendo importado al proyecto por CDN en vez de por el paquete instalado, 	~~Esto es un TODO realmente~~.
-
-### General
-* Haber logrado configurar Docker, en la branch *docker* hay un adelanto de lo que logré hacer
