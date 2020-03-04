@@ -28,8 +28,3 @@ App Fullstack realizada con React, Nodejs y mongodb,
 * Para mantener un estandar en el código agregué las herramientas: *Husky*, *pretty-quick*, *Eslint* (con la guía de airbnb y algunas reglas silenciadas) y *Prettier*
 * Agregué la configuración para usar el debugger de VSCode en cualquiera de los 2 proyectos, para iniciarlo solo hay que oprimir *F5*.   
 * Usé **Axios** para hacer llamadas HTTP. 
-
-## Algo que me habría gustado mejorar
-### Server
-* Tener un mejor manejo de errores
-* Haber usado TypeScript para mejorar la fiabilidad del código
