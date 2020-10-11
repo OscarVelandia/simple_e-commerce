@@ -10,9 +10,7 @@ const getProductsFromGarbarinoEndpoint = async () => {
       .get(URL)
       .then(products => products)
       .then(products =>
-        products.data.items.map(product => {
-          return { ...product, enabled: true };
-        })
+        products.data.items.map(product => ({ ...product, enabled: true }))
       );
   } catch (err) {
     return new Error(err);
@@ -20,17 +18,14 @@ const getProductsFromGarbarinoEndpoint = async () => {
 };
 
 const searchNotAvailableProduct = (product, productIsNotAvailable) => {
-  return productIsNotAvailable.some(productNotAvailable => {
-    return (
-      productNotAvailable.product_id === product.id &&
-      productNotAvailable.enabled === false
-    );
+  return productIsNotAvailable.some(({ product_id, enabled }) => {
+    return product_id === product.id && enabled === false;
   });
 };
 
 const requiredProduct = (garbarinoProducts, id) => {
   return garbarinoProducts.reduce((requiredProd, product) => {
-    return product.id === id ? (requiredProd = product) : requiredProd;
+    return (requiredProd = product.id === id ? product : requiredProd);
   }, {});
 };
 
@@ -38,20 +33,14 @@ module.exports = {
   getAllProducts: async (req, res) => {
     try {
       const garbarinoProducts = await getProductsFromGarbarinoEndpoint();
-
       const productsNotAvailable = await ProductAvailabilityModel.find();
-
       const products = garbarinoProducts.map(product => {
         const productIsNotAvailable = searchNotAvailableProduct(
           product,
           productsNotAvailable
         );
 
-        if (productIsNotAvailable) {
-          return { ...product, enabled: false };
-        }
-
-        return { ...product, enabled: true };
+        return { ...product, enabled: !productIsNotAvailable };
       });
 
       res.status(200).json(products);
@@ -112,16 +101,16 @@ module.exports = {
           .end();
       }
 
-      if (!existingProductInDB) {
-        await ProductAvailabilityModel.create({
-          product_id: id,
-          enabled
-        });
-      } else {
+      if (existingProductInDB) {
         await ProductAvailabilityModel.findOneAndUpdate(
           { product_id: id },
           { enabled }
         );
+      } else {
+        await ProductAvailabilityModel.create({
+          product_id: id,
+          enabled
+        });
       }
 
       return res.status(200).json({
